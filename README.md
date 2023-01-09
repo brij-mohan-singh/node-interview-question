@@ -26,3 +26,9 @@ function run() {
 
     console.log("Same instance? " + (instance1 === instance2));
 }
+
+## Hoisting
+## closure function 
+## callback 
+## callback hell
+## promise.chain
