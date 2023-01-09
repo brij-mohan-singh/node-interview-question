@@ -34,19 +34,20 @@ function run() {
     
                // nested function example
 
-// outer function
+               // outer function
 
-function greet(name) {
-    // inner function
-    function displayName() {
-        console.log('Hi' + ' ' + name);
-    }
+               function greet(name) {
+                   // inner function
+                   function displayName() {
+                       console.log('Hi' + ' ' + name);
+                   }
 
-    // calling inner function
-    displayName();
-}
-// calling outer function
-greet('John'); // Hi John
+                   // calling inner function
+                   displayName();
+               }
+               
+              // calling outer function
+              greet('John'); // Hi John
 
 
 ## callback 
