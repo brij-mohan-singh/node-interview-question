@@ -31,6 +31,25 @@ function run() {
 ## closure function 
                    - : Closure means that an inner function always has access to the vars and parameters of its outer 
     function, even after the outer function has returned. 
+    
+               // nested function example
+
+// outer function
+function greet(name) {
+
+    // inner function
+    function displayName() {
+        console.log('Hi' + ' ' + name);
+    }
+
+    // calling inner function
+    displayName();
+}
+
+// calling outer function
+greet('John'); // Hi John
+
+
 ## callback 
 ## callback hell
 ## promise.chain
