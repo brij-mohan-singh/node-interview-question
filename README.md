@@ -29,7 +29,8 @@ function run() {
 
 ## Hoisting
 ## closure function 
-                   - : Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. 
+                   - : Closure means that an inner function always has access to the vars and parameters of its outer 
+    function, even after the outer function has returned. 
 ## callback 
 ## callback hell
 ## promise.chain
