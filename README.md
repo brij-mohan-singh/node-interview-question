@@ -70,3 +70,30 @@ function run() {
 
 ## callback hell
 ## promise.chain
+## Shallow vs. Deep Copy
+                      :- A deep copying means that value of the new variable is disconnected from the original variable 
+                while a shallow copy means that some values are still connected to the original variable.
+                
+                Shallow copy example
+                 Consider the following example:
+                 
+                             let person = {
+                                  firstName: 'John',
+                                  lastName: 'Doe',
+                                  address: {
+                                      street: 'North 1st street',
+                                      city: 'San Jose',
+                                      state: 'CA',
+                                      country: 'USA'
+                                  }
+                              };
+
+
+                              let copiedPerson = Object.assign({}, person);
+
+                              copiedPerson.firstName = 'Jane'; // disconnected
+
+                              copiedPerson.address.street = 'Amphitheatre Parkway'; // connected
+                              copiedPerson.address.city = 'Mountain View'; // connected
+
+                              console.log(copiedPerson);
