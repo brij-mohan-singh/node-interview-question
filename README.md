@@ -124,3 +124,18 @@
                     copiedPerson.address.city = 'Mountain View';
 
                     console.log(person);
+## find smallest & largest number from array :- 
+                                          var arr = [1,5,8,-8,54,65,31,3];
+                                          let smallestNum = arr[0];
+                                          let largestNum = arr[0];
+                                          for(ele of arr) {
+                                            if(ele > largestNum){
+                                            largestNum = ele;
+                                            } else if(smallestNum > ele) {
+                                                   smallestNum = ele;
+                                            }
+                                          
+                                          }
+                                          
+                                          console.log('small number - ', smallestNum);
+                                          console.log('largest number - ', largestNum);
