@@ -140,7 +140,10 @@
                                           console.log('small number - ', smallestNum);
                                           console.log('largest number - ', largestNum);
 
-## chksum pair :- 
+## chksum pair :-   Given a list of numbers, return whether any two sums to k.
+                For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+
+
                                function chkPair(A , size , x) {
 
                                     for (i = 0; i < (size - 1); i++) {
