@@ -170,7 +170,7 @@
                               else {
                                   document.write("<br/>No valid pair exists for " + x);
                               }
-  ##  polimorphism - Compile-time polymorphism	Runtime polymorphism
+  ##  polymorphism - Compile-time polymorphism  vs	Runtime polymorphism
 
                   #1 Basic
                   Compile time polymorphism means binding is occuring at compile time
