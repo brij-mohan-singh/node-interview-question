@@ -170,3 +170,20 @@
                               else {
                                   document.write("<br/>No valid pair exists for " + x);
                               }
+  ##  polimorphism - Compile-time polymorphism	Runtime polymorphism
+
+                  #1 Basic
+                  Compile time polymorphism means binding is occuring at compile time
+                  Run time polymorphism where at run time we came to know which method is going to invoke
+                  #2 Static/Dynamic Binding
+
+
+                  It can be achieved through static binding
+                  It can be achieved through dynamic binding
+                  #4.Inheritance
+                    Inheritance is not involved
+                    Inheritance is involved
+                  #5 Example
+                  Method overloading is  an example of compile time polymorphism
+                  Method overriding is an example of runtime polymorphism
+                  Example of Compile-time Polymorphism
