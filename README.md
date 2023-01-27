@@ -212,4 +212,21 @@
                   // const filteredData = data.myCustomFilter(el => el > 2);
 
                   console.log(filteredData); // output [3,4,5]
+                  
+                  
+  ## creating-my-own-array-prototype-map-method-how-can-i-access-the-array
+  
+            Array.prototype.brijMap = function(callback){
+              let newArray = [];
+              for(let i=0; i < this.length;i++){
+                  let counter = callback(this[i]);
+                  newArray.push(counter);
+              }
+
+              return newArray;
+          };
+
+          let arr = [1, 2, 3];
+          arr = arr.brijMap(e => e * 2);
+          console.log(arr);
 
