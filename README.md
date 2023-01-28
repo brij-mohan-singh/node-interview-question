@@ -230,3 +230,36 @@
           arr = arr.brijMap(e => e * 2);
           console.log(arr);
 
+## current string aabccderggkiubaaeccBB     expected string  :  a2b1c2d1e1r1g2k1i1u1b1a2e1c2 means a have sequence occurence twice other one a letter also have string again but position is different
+
+
+
+              let strV = 'aabccderggkiubaaeccBB';
+              //let strVArray = strV.split('');
+              //console.log('strVArray ==> ', strVArray);
+              var arr = [];
+              let counter = 0;
+              let letter = strV[0];
+              //for(let i=0; i < strVArray.length; i++) {
+              for(let c in strV) {
+
+                  //if(letter != strVArray[i]) {
+                    if(letter != strV[c]) {   
+
+                      let newArr = [letter, counter];
+                      arr.push(newArr);
+                       //letter = strVArray[i];
+                      letter = strV[c] ;
+                      counter = 0;
+
+                  }
+
+                  counter +=1;
+
+              }
+
+              console.log('arr', arr);
+              const statment = arr.reduce((acc, ele) => acc + ele);
+              console.log('statment', statment.replace(/,/g, ""));
+
+
