@@ -229,6 +229,34 @@
           let arr = [1, 2, 3];
           arr = arr.brijMap(e => e * 2);
           console.log(arr);
+          
+          
+          
+          
+## Own filter function 
+       
+                  Array.prototype.myReduce = function(callback, accumulator) {
+                      if(this.length < 1) {
+                          throw new Error("Array is Empty")
+                      }
+
+                      if(!accumulator) {
+                          if(typeof this[0] === "string") {
+                              accumulator = '';
+                          } else if(typeof this[0] === "number") {
+                              accumulator = 0;
+                          }
+                      }
+
+                      for(let index=0; index < this.length; index++) {
+                          accumulator = callback(accumulator, this[index]);
+                      }
+                      return accumulator;
+                  }
+
+                  const names = ['Zakir', 'Rashid', 'Harish'];
+                  const filterNames = names.myFilter(name => name !== 'Zakir');
+                  const statment = names.myReduce((acc, ele) => acc + ele);
 
 ##  input string aabccderggkiubaaeccBB   
 ##  Output expected string  :  a2b1c2d1e1r1g2k1i1u1b1a2e1c2 
