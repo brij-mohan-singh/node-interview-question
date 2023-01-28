@@ -230,7 +230,9 @@
           arr = arr.brijMap(e => e * 2);
           console.log(arr);
 
-## current string aabccderggkiubaaeccBB     expected string  :  a2b1c2d1e1r1g2k1i1u1b1a2e1c2 means a have sequence occurence twice other one a letter also have string again but position is different
+##  input string aabccderggkiubaaeccBB   
+##  Output expected string  :  a2b1c2d1e1r1g2k1i1u1b1a2e1c2 
+##  means a have sequence occurence twice other one a letter also have string again but position is different
 
 
 
