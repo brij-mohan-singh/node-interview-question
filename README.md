@@ -311,5 +311,34 @@
 
               //console.log('arr', arr);
               const statment = arr.reduce((acc, ele) => acc + ele);
+              
+              
+       ## 3 element max sum 
+       
+             
+            let arrT = [1, 2, 5, -1, 77, 21 , 2];
+            let tripleSumMax = arrT[0]+arrT[1]+[2];
+            let arrLen = arrT.length;
+            let tripleSumMaxP = 0;
+
+            for(let i = 0 ; i < arrLen ; i++ ) {
+              for(let j = i+1 ; j < arrLen ; j++) {
+                  for(let k = j+1 ; k < arrLen ; k++) {
+                    tripleSumMaxP = arrT[i] + arrT[j]  + arrT[k] ;
+                    if(tripleSumMax < tripleSumMaxP){
+                      tripleSumMax = tripleSumMaxP
+                    }
+
+              }
+
+              }
+
+            }
+
+            console.log('tripleSumMax',tripleSumMax );
+            
+            
+            
+            
 
 
