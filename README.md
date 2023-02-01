@@ -359,6 +359,35 @@
               }
 
           console.log('all the PAIRS possible', pair);
+          
+          
+          
+          
+ ## unsolved problems
+ 
+
+              let cArr =  [-2, -3, 4, -1, -2, 1, 5, -3];
+
+
+              let clen = cArr.length;
+              let maxSumC = 0;
+              let arrEC = [];
+              let element = []
+              for(let i=0;i < clen; i++) {
+
+                  element.push[cArr[i]];
+                  for( let j = i+1 ; j < clen ; j++) {
+                    element.push[cArr[j]];
+                    maxSumC +=  cArr[i] + cArr[j] ;
+                  }
+
+                console.log('Sum of element : ' +  maxSumC , element);
+                maxSumC = 0;
+
+              }
+
+              console.log('element', arrEC);
+
             
             
             
