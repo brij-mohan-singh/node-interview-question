@@ -340,5 +340,28 @@
             
             
             
+            
+   ##.  pair sum 
+   
+              let arr =  [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+              let len = arr.length;
+              let y = 110; // onw pair sum equal to 110
+              let pair = [];
+
+              for(let i = 0; i < len; i++) {
+
+                 for(let j=i+1 ; j < len ; j++) {
+
+                    if( (arr[i] +  arr[j])  == y) {
+                      pair.push([arr[i], arr[j]]);
+                    }
+                 }
+              }
+
+          console.log('all the PAIRS possible', pair);
+            
+            
+            
+            
 
 
