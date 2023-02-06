@@ -408,7 +408,7 @@ Input Format
 
 The first line contains , the hours portion The second line contains , the minutes portion
 
-Constraints
+##Constraints
 
 Sample Input 0
 
@@ -417,21 +417,62 @@ Sample Input 0
 Sample Output 0
 
 thirteen minutes to six
-Sample Input 1
+##Sample Input 1
 
 3
 00
-Sample Output 1
+##Sample Output 1
 
 three o' clock
-Sample Input 2
+##Sample Input 2
 
 7
 15
-Sample Output 2
+##Sample Output 2
 
 quarter past seven     
             
             
 
+  
+  ## Solution :-  
+
+                                      function timeInWords(h, m) {
+                                                  let nums = [ "zero", "one", "two", "three", "four",
+                                                                          "five", "six", "seven", "eight", "nine",
+                                                                          "ten", "eleven", "twelve", "thirteen",
+                                                                          "fourteen", "fifteen", "sixteen", "seventeen",
+                                                                          "eighteen", "nineteen", "twenty", "twenty one",
+                                                                          "twenty two", "twenty three", "twenty four",
+                                                                          "twenty five", "twenty six", "twenty seven",
+                                                                          "twenty eight", "twenty nine",
+                                                                      ];
+
+                                                     let output = '';
+
+                                                      if (m == 0) {
+                                                          output =  nums[h] + " o' clock ";
+                                                      } else if (m == 1) {
+                                                          output =   "one minute past " + nums[h];
+                                                      }  else if (m == 59) {
+                                                          output =   "one minute to " + nums[(h % 12) + 1] ;
+                                                      } else if (m == 15) {
+                                                          output =   "quarter past " + nums[h] ;
+                                                      } else if (m == 30) {
+                                                          output =   "half past " + nums[h];
+                                                      } else if (m == 45) {
+                                                          output =   "quarter to " + nums[(h % 12) + 1];
+                                                      }  else if (m <= 30){
+                                                          output =    nums[m] + " minutes past " + nums[h] ;
+                                                      } else if (m > 30) {
+                                                          output =    nums[60 - m] + " minutes to " + nums[(h % 12) + 1] ;
+                                                      }
+
+                                                   return output;
+
+                                         }
+
+                                       let h = 6;
+                                        let m = 24;
+                                        timeInWords(h, m);
 
