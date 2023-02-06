@@ -476,3 +476,24 @@ quarter past seven
                                         let m = 24;
                                         timeInWords(h, m);
 
+## chocolateFeast
+
+
+          function chocolateFeast(n, c, m) {
+              // Write your code here
+              let count = 0;
+              let value = Math.floor(n / c);
+
+              while (true) {
+                  let focus = value + (count % m);
+
+                  count += value;
+
+                  if (focus < m) break;
+
+                  value = Math.floor(focus / m);
+              }
+
+              return count;
+
+          }
