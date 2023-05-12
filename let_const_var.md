@@ -1,4 +1,4 @@
-Attempt | #const | #let | #var 
+# | #const | #let | #var 
 --- | --- | --- | --- 
 Function Scope | X(NO) | X(NO) | Y{YES}
 Block Scope | Y{YES} | Y{YES} | X(NO) 
