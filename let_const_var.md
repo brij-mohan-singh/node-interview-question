@@ -1,4 +1,4 @@
-# | #const | #let | #var 
+subject | #const | #let | #var 
 --- | --- | --- | --- 
 Function Scope | X(NO) | X(NO) | Y{YES}
 Block Scope | Y{YES} | Y{YES} | X(NO) 
