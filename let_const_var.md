@@ -1,3 +1,3 @@
-Attempt | #1 | #2 | #3 
+Attempt | #const | #let | #var 
 --- | --- | --- | --- 
-Seconds | 301 | 283 | 290 
+Function Scope | X | X | Y 
