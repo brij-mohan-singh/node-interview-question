@@ -1,9 +1,9 @@
 Attempt | #const | #let | #var 
 --- | --- | --- | --- 
-Function Scope | X(NO) | X(NO) | Y 
-Block Scope | Y | Y | X(NO) 
-Hoisted | X(NO) | X(NO) | Y 
-Temporal Dead Zone | Y | Y | X(NO) 
-Cab be re-assigned | X(NO) | Y | Y 
-Cab be re-declered | X(NO) | X(NO) | Y 
-Must be initialized | Y | X(NO) | X(NO) 
+Function Scope | X(NO) | X(NO) | Y{YES}
+Block Scope | Y{YES} | Y{YES} | X(NO) 
+Hoisted | X(NO) | X(NO) | Y{YES} 
+Temporal Dead Zone | Y{YES} | Y{YES} | X(NO) 
+Cab be re-assigned | X(NO) | Y{YES} | Y{YES}
+Cab be re-declered | X(NO) | X(NO) | Y{YES} 
+Must be initialized | Y{YES} | X(NO) | X(NO) 
