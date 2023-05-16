@@ -502,3 +502,109 @@ quarter past seven
 ## Debouncing and Throttling in JavaScript
 ## TypeScript Basic Generics 
 ## Generics TypeScript
+
+
+
+
+
+const mapping = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+
+
+/**
+Input: digits = "23" 
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+
+
+
+
+    Input "234"
+    Output: [
+  'adg', 'adh', 'adi', 'aeg',
+  'aeh', 'aei', 'afg', 'afh',
+  'afi', 'bdg', 'bdh', 'bdi',
+  'beg', 'beh', 'bei', 'bfg',
+  'bfh', 'bfi', 'cdg', 'cdh',
+  'cdi', 'ceg', 'ceh', 'cei',
+  'cfg', 'cfh', 'cfi'
+]
+
+
+***/
+
+
+
+let pc1 = function(stringT){
+
+    const mapping = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+
+    const strArray = stringT.split('');
+
+
+// Case Input: 2 then  Output: ['a', 'b', 'c']
+    if(strArray.length === 1) {
+      return  mapping[strArray[0]].split('');
+
+    } else if(strArray.length === 2) {
+        //case  Input: digits = "23" Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+   let output = [];
+        let initialSplit =  mapping[strArray[0]].split('');
+        let nextSplit =  mapping[strArray[1]].split('');
+
+        for(let i=0 ; i<=initialSplit.length;i++){
+            for(let j=0 ; j<=nextSplit.length;j++){
+                let out2 = `${initialSplit[i]}${nextSplit[j]}`;
+                output.push(out2);
+             }
+           
+        }
+
+        return output;
+      
+    } else if(strArray.length === 3) {
+        //case  Input: digits = "23" Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+        /**
+         *  Input "234"
+    Output: [
+  'adg', 'adh', 'adi', 'aeg',
+  'aeh', 'aei', 'afg', 'afh',
+  'afi', 'bdg', 'bdh', 'bdi',
+  'beg', 'beh', 'bei', 'bfg',
+  'bfh', 'bfi', 'cdg', 'cdh',
+  'cdi', 'ceg', 'ceh', 'cei',
+  'cfg', 'cfh', 'cfi'
+]
+         * 
+        */
+   let output = [];
+        let initialSplit =  mapping[strArray[0]].split('');
+        let nextSplit =  mapping[strArray[1]].split('');
+        let next2Split =  mapping[strArray[2]].split('');
+
+        for(let i=0 ; i<=initialSplit.length;i++){
+            for(let j=0 ; j<=nextSplit.length;j++){
+                for(let k=0 ; k<=next2Split.length;k++){
+                let out2 = `${initialSplit[i]}${nextSplit[j]}${next2Split[k]}`;
+                output.push(out2);
+            }
+             }
+           
+        }
+
+        return output;
+      
+    }
+
+    
+
+
+}
+
+
+function recur(depthLevel = 1 , mapping=[]){
+
+}
+
+
+
+
