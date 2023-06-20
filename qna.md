@@ -1,6 +1,7 @@
 ##Question -  How JavaScript Works: Web APIs, Callback Queue, and Event Loop
 
-![Uploading webapi.gif…]()
+![webapi](https://github.com/smb-it-coder/node-interview-question/assets/112647012/f74f0363-d220-4f16-b593-baf3aaf7ee52)
+
 
   console.log("start");
 
