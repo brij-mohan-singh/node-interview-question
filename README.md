@@ -500,7 +500,7 @@ quarter past seven
 
 
 ## Debouncing and Throttling in JavaScript
-   # Debouncing delays the execution of your code until the user stops performing a certain action for a specified amount of time. Throttling limits the execution of your code to once in every specified time interval.
+    Debouncing delays the execution of your code until the user stops performing a certain action for a specified amount of time. Throttling limits the execution of your code to once in every specified time interval.
 ## TypeScript Basic Generics 
 ## Generics TypeScript
 
