@@ -39,7 +39,9 @@ Introduced in React 16.8, hooks are special functions that allow you to "hook in
               or when the next state depends on the previous one.
 
 2. Effect Hooks:
+   
             ‘useEffect’:
+   
                         It enables performing side effects, such as data fetching, subscriptions,
                          or DOM manipulations after the component has been rendered.
                                   
