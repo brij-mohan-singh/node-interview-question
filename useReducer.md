@@ -10,8 +10,8 @@ useReducer Hook Explained:-
 
                      1. Multiple State Values: If your component deals with several interconnected state values, 
                         useReducer helps keep the state updates organized and predictable.
-                     2. Complex State Updates: When updating your component's state depends on the previous state, useReducer offers 
-                       a clear way to define the state transition logic.
+                     2. Complex State Updates: When updating your component's state depends on the previous state,
+                        useReducer offers a clear way to define the state transition logic.
                      
 Breakdown of useReducer:
     useReducer accepts two arguments (Reducer Function & Initial State) :
