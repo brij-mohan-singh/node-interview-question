@@ -108,3 +108,47 @@ b). ‘useLayoutEffect’: Similar to ‘useEffect’, but runs synchronously af
                                           }
                                           
                                           export default Example;
+
+
+3. Context Hooks:
+
+       ‘useContext’: This hook in React is used to consume values from a React context. It allows functional components to access
+                      the value provided by a context provider higher up in the component tree without the need for prop drilling.
+
+          
+       1. Create a context
+                  // createContext.js
+                  import React from 'react';
+                  
+                  // Create a new context
+                  const MyContext = React.createContext();
+                  
+                  export default MyContext;
+   
+       2. Provide a value using Context Provider
+       
+                      import React from 'react';
+                      import MyContext from './createContext';
+                      
+                      function App() {
+                        const value = 'Hello, Context!';
+                      
+                        return (
+                          <MyContext.Provider value={value}>
+                            <ChildComponent />
+                          </MyContext.Provider>
+                        );
+                      }
+   
+       3. Consume the context value using ‘useContext’
+       
+               import React, { useContext } from 'react';
+               import MyContext from './createContext';
+               
+               function ChildComponent() {
+                 const contextValue = useContext(MyContext);
+               
+                 return <div>{contextValue}</div>;
+               }
+
+   
