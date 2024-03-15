@@ -10,6 +10,7 @@ Introduced in React 16.8, hooks are special functions that allow you to "hook in
              built-in hooks, you can effectively leverage their capabilities to create engaging and interactive user interfaces.
 
 1. State Hooks:
+   
   a) ‘useState’: It is the most commonly used React Hook. It allows functional components to have state variables. It takes an initial state value as the argument and returns an array with two elements — the current state value and a function to update that state.
 
                   import React, { useState } from 'react';
@@ -29,7 +30,42 @@ Introduced in React 16.8, hooks are special functions that allow you to "hook in
                     );
                   }
 
-2. useReducer
+       b). useReducer
+       
+          Provides an alternative to ‘useState’ for managing complex state logic involving multiple sub-values 
+              or when the next state depends on the previous one.
 
-Provides an alternative to ‘useState’ for managing complex state logic involving multiple sub-values or when the next state depends on the previous one.
+2. Effect Hooks:
+            ‘useEffect’:
+                        It enables performing side effects, such as data fetching, subscriptions,
+                         or DOM manipulations after the component has been rendered.
+                                  
+                           import React, { useState, useEffect } from 'react';
+                                  
+                                  function Example() {
+                                    const [data, setData] = useState(null);
+                                  
+                                    useEffect(() => {
+                                      // This effect runs after the component has rendered
+                                  
+                                      // Perform some asynchronous data fetching
+                                      fetchData()
+                                        .then((result) => {
+                                          setData(result);
+                                        })
+                                        .catch((error) => {
+                                          console.error('Error fetching data:', error);
+                                        });
+                                  
+                                      // Clean up the effect
+                                      return () => {
+                                        // Perform any necessary cleanup here
+                                        // This is optional but important to prevent memory leaks
+                                      };
+                                    }, []); // Empty dependency array, so the effect runs only once on component mount
+                                  
+                                    return <div>{data ? <p>Data: {data}</p> : <p>Loading data...</p>}</div>;
+                                  }
+                                  
+                                  export default Example;
 
