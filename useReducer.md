@@ -33,8 +33,8 @@ Breakdown of useReducer:
                                 }
                               };
 
-            2.   Initial State: This argument specifies the initial state object that your component's state will start with. It can be a simple value or 
-                 a more complex object structure.
+            2.   Initial State: This argument specifies the initial state object that your component's
+                    state will start with. It can be a simple value or  a more complex object structure.
                  
                  Return Values:
                         useReducer returns an array containing two elements:
