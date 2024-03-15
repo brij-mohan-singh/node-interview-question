@@ -151,4 +151,26 @@ b). ‘useLayoutEffect’: Similar to ‘useEffect’, but runs synchronously af
                  return <div>{contextValue}</div>;
                }
 
-   
+4. Ref Hooks:
+    useRef: Provides a way to create mutable references to values or
+    DOM elements that persist across renders.
+   Often used for accessing or manipulating DOM elements.
+
+                     import React, { useRef } from 'react';
+                        
+                        function Example() {
+                          const inputRef = useRef(null);
+                        
+                          const handleClick = () => {
+                            inputRef.current.focus();
+                          };
+                        
+                          return (
+                            <div>
+                              <input type="text" ref={inputRef} />
+                              <button onClick={handleClick}>Focus Input</button>
+                            </div>
+                          );
+                        }
+                        
+                        export default Example;
