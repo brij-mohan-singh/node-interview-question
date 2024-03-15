@@ -38,10 +38,10 @@ Breakdown of useReducer:
                  
                  Return Values:
                         useReducer returns an array containing two elements:
-                              Current State: This reflects the current value of the component's state based on the reducer function and dispatched actions.
-                              Dispatch Function: This function is used to trigger state updates. You call dispatch with an action object that tells the reducer how to update the state.
-
-
+                              Current State: This reflects the current value of the component's 
+                                state based on the reducer function and dispatched actions.
+                              Dispatch Function: This function is used to trigger state updates. 
+                              You call dispatch with an action object  that tells the reducer how to update the state.
 
               Example: Counter with useReducer
                 Here's a basic example demonstrating useReducer for managing a counter:
