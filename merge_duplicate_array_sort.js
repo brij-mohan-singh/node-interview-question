@@ -21,12 +21,12 @@ const removeDup = (arr) => {
 
 const sortDup = (newArr) => {
   for (let i = 0; i < newArr.length; i++) {
-    for (let j = 0; newArr.length - i; j++) {
+    for (let j = 0; j < newArr.length - i; j++) {
       if (newArr[j] > newArr[j + 1]) {
-        // [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]];
-        let temp = newArr[j];
-        newArr[j] = newArr[j + 1];
-        newArr[j + 1] = temp;
+         [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]];
+        //let temp = newArr[j];
+        //newArr[j] = newArr[j + 1];
+        //newArr[j + 1] = temp;
       }
     }
   }
