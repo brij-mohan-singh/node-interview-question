@@ -40,7 +40,7 @@ Introduced in React 16.8, hooks are special functions that allow you to "hook in
 
 2. Effect Hooks:
    
-           a). ‘useEffect’:
+ a). ‘useEffect’:
    
                         It enables performing side effects, such as data fetching, subscriptions,
                          or DOM manipulations after the component has been rendered.
@@ -74,10 +74,8 @@ Introduced in React 16.8, hooks are special functions that allow you to "hook in
                                   
                                   export default Example;
 
-             b). ‘useLayoutEffect’:
-
-                   Similar to ‘useEffect’, but runs synchronously after all DOM mutations are applied, useful for measuring
-                     layout or performing DOM manipulations that require synchronous updates.
+b). ‘useLayoutEffect’: Similar to ‘useEffect’, but runs synchronously after all DOM mutations are applied,
+    useful for measuring layout or performing DOM manipulations that require synchronous updates.
                                           
                                     import React, { useState, useLayoutEffect } from 'react';
                                           
