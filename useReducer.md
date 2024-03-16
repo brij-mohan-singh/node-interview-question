@@ -82,18 +82,20 @@ Breakdown of useReducer:
                                                             );
                                                           }
 
+
+
                             
-                            Use code with caution.
-                            In this example:
-                            
-                            The reducer function handles state updates based on the action type ('INCREMENT' or 'DECREMENT').
-                            The Counter component uses useReducer to get the current state (state) and the dispatch function.
-                            The increment and decrement functions dispatch actions to trigger state updates.
-                            Additional Considerations:
-                            
-                            Custom Hooks: You can create custom hooks using useReducer to encapsulate reusable state logic for more complex scenarios.
-                            Comparison to useState: While useState is suitable for simpler state management, useReducer becomes valuable when dealing 
-                            with complex state updates or multiple interconnected state values.
-                            By effectively leveraging useReducer, you can enhance the organization, maintainability, and predictability 
-                             of state management in your React functional components.
+Use code with caution.
+In this example:
+
+The reducer function handles state updates based on the action type ('INCREMENT' or 'DECREMENT').
+The Counter component uses useReducer to get the current state (state) and the dispatch function.
+The increment and decrement functions dispatch actions to trigger state updates.
+Additional Considerations:
+
+Custom Hooks: You can create custom hooks using useReducer to encapsulate reusable state logic for more complex scenarios.
+Comparison to useState: While useState is suitable for simpler state management, useReducer becomes valuable when dealing 
+with complex state updates or multiple interconnected state values.
+By effectively leveraging useReducer, you can enhance the organization, maintainability, and predictability 
+ of state management in your React functional components.
 
