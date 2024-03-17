@@ -1,32 +1,36 @@
-Dependency Inversion Principle :- 
+##Dependency Inversion Principle :- 
 
-                             DIP is focusing on decoupling high-level modules from low-level modules by introducing an abstraction layer.
+  DIP is focusing on decoupling high-level modules from low-level modules by introducing an abstraction layer.
 
-High-level modules should not depend on low-level modules. Both should depend on abstractions.
-Abstractions should not depend on details. Details should depend on abstractions
-// Imagine you have a TV remote (the UserDataProcessor) that needs batteries (the DatabaseInterface) to work.
-// It doesn't matter what brand of batteries you use (like MySQLDatabase or any other database), as long as they fit the remote.
+         1.  High-level modules should not depend on low-level modules. Both should depend on abstractions.
+         2.  Abstractions should not depend on details. Details should depend on abstractions
 
-interface DatabaseInterface {
-    function fetchData();
-}
+         
+                                // Imagine you have a TV remote (the UserDataProcessor) that needs batteries (the DatabaseInterface) to work.
+                                // It doesn't matter what brand of batteries you use (like MySQLDatabase or any other database), as long as they fit the remote.
 
-class MySQLDatabase implements DatabaseInterface {
-    function fetchData() { /* ... */ }
-}
+                                  interface DatabaseInterface {
+                                      function fetchData();
+                                  }
+                                  
+                                  class MySQLDatabase implements DatabaseInterface {
+                                      function fetchData() { /* ... */ }
+                                  }
+                                  
+                                  class UserDataProcessor {
+                                      private $database;
+                                  
+                                      function __construct(DatabaseInterface $db) {
+                                          $this->database = $db;
+                                      }
+                                  
+                                      function processData() {
+                                          $data = $this->database->fetchData();
+                                          // process data
+                                      }
+                                  }
 
-class UserDataProcessor {
-    private $database;
 
-    function __construct(DatabaseInterface $db) {
-        $this->database = $db;
-    }
-
-    function processData() {
-        $data = $this->database->fetchData();
-        // process data
-    }
-}
 Explain Dependency Injection
 Dependency Injection (DI) in PHP is like giving a class its 'tools' from outside rather than building them inside. It makes your code flexible (easy to change), clear (easy to understand), and test-friendly (easy to check if it's working).
 
