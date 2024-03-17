@@ -1,4 +1,40 @@
-##Dependency Inversion Principle :- 
+Liskov Substitution Principle
+
+The Liskov Substitution Principle ensures that objects of a superclass can be replaced with objects of its subclasses without affecting the application's correctness.
+
+It's like saying, if you have a program that uses a bird, you should be able to swap in a different kind of bird, like a sparrow or a pigeon, and everything should still work just fine. It ensures that a subclass can stand in for its parent class without any errors or unexpected behavior.
+
+// In this setup, Bird is the superclass. Sparrow and Penguin are subclasses.
+// According to LSP, you should be able to replace instances of Bird with instances of its subclasses (Sparrow or Penguin) without altering the correctness of the program.
+
+class Bird {
+    public function fly() {
+        echo "I can fly!";
+    }
+}
+
+class Sparrow extends Bird {
+    // Sparrow flies, so no need to override fly()
+}
+
+class Penguin extends Bird {
+    public function fly() {
+        throw new Exception("I can't fly!");
+    }
+}
+
+function makeBirdFly(Bird $bird) {
+    $bird->fly();
+}
+
+$bird1 = new Sparrow();
+$bird2 = new Penguin();
+
+makeBirdFly($bird1); // Works fine
+makeBirdFly($bird2); // Error: breaks LSP
+
+
+#Dependency Inversion Principle :- 
 
   DIP is focusing on decoupling high-level modules from low-level modules by introducing an abstraction layer.
 
