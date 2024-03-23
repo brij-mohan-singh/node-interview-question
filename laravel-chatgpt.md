@@ -29,9 +29,9 @@ Middleware acts as a bridge between a request and a response. It allows filterin
    * Middleware intercepts the request before it reaches the route or controller, allowing you to inspect, modify, or reject the request.
 
 + # Types of Middleware:
-    + ##Global Middleware:
+    + # Global Middleware:
         * Applied to all HTTP requests entering your application.
-    ##Route Middleware:
+    + # Route Middleware:
         * Applied to specific routes or groups of routes.
   
 + # Middleware Registration:
@@ -42,7 +42,7 @@ Middleware acts as a bridge between a request and a response. It allows filterin
   * Middleware execute sequentially in the order they are listed in the **$middleware** property.
   * Route-specific middleware can be assigned to routes or groups of routes within the route definitions.
     
-##Live Example:
+## Live Example:
 Let's create a custom middleware to demonstrate its usage. Suppose we want to create a middleware to ensure that only authenticated users can access certain routes.
 
 + # Create Middleware:
@@ -54,24 +54,45 @@ Run the following artisan command to generate a new middleware:
     Open the generated AuthenticateMiddleware class located in app/Http/Middleware. Add your authentication logic in the handle method. For example:
 
 
-                                   <?php
-                                    
-                                    namespace App\Http\Middleware;
-                                    
-                                    use Closure;
-                                    use Illuminate\Http\Request;
-                                    
-                                    class AuthenticateMiddleware
-                                    {
-                                        public function handle(Request $request, Closure $next)
-                                        {
-                                            if (!auth()->check()) {
-                                                return redirect()->route('login'); // Redirect to login if not authenticated
-                                            }
-                                    
-                                            return $next($request); // Proceed to the next middleware or route
-                                        }
-                                    }
+                      <?php
+                       
+                       namespace App\Http\Middleware;
+                       
+                       use Closure;
+                       use Illuminate\Http\Request;
+                       
+                       class AuthenticateMiddleware
+                       {
+                           public function handle(Request $request, Closure $next)
+                           {
+                               if (!auth()->check()) {
+                                   return redirect()->route('login'); // Redirect to login if not authenticated
+                               }
+                       
+                               return $next($request); // Proceed to the next middleware or route
+                           }
+                       }
+
+
+
++ ## Register Middleware:
+Add your middleware to the $routeMiddleware array in **app/Http/Kernel.php**:
+
+      protected $routeMiddleware = [
+          // Other middleware
+          'auth' => \App\Http\Middleware\AuthenticateMiddleware::class,
+      ];
+
++ # Apply Middleware to Routes:
+   Use the middleware in your routes or route groups:
+
+           Route::group(['middleware' => 'auth'], function () {
+             // Routes accessible only to authenticated users
+             Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+         });
+
+
+  Now, the AuthenticateMiddleware will ensure that any request to routes wrapped inside the auth middleware group will only be accessible to authenticated users. If a user tries to access such routes without authentication, they will be redirected to the login page.
 
 
 ## What is Blade in Laravel?
