@@ -1,21 +1,21 @@
 Here's a curated list of top 20 Laravel interview questions along with their answers:
 
-#What is Laravel?
+# What is Laravel?
 
-Laravel is a PHP framework used for building web applications following the Model-View-Controller (MVC) architectural pattern.
-#What are the features of Laravel?
+* Laravel is a PHP framework used for building web applications following the Model-View-Controller (MVC) architectural pattern.
+# What are the features of Laravel?
 
-Some key features of Laravel include routing, middleware, authentication, ORM (Eloquent), Blade templating engine, Artisan CLI, and more.
-#What is Composer, and how is it used in Laravel?
+* Some key features of Laravel include routing, middleware, authentication, ORM (Eloquent), Blade templating engine, Artisan CLI, and more.
+# What is Composer, and how is it used in Laravel?
 
 Composer is a dependency manager for PHP. In Laravel, Composer is used to manage project dependencies and to install Laravel itself, as well as any third-party packages.
-##Explain the concept of middleware in Laravel.
+## Explain the concept of middleware in Laravel.
 
 Middleware acts as a bridge between a request and a response. It allows filtering HTTP requests entering your application. Middleware can be used for authentication, logging, CORS, etc.
-##What is Blade in Laravel?
+## What is Blade in Laravel?
 
 Blade is the lightweight, powerful templating engine provided with Laravel. It enables you to use the PHP code in your views and helps to create reusable templates with its inheritance feature.
-##Explain Eloquent ORM.
+## Explain Eloquent ORM.
 
 Eloquent is Laravel's built-in ORM (Object-Relational Mapper) which provides a simple ActiveRecord implementation for working with your database. It allows you to interact with your database tables using PHP syntax instead of SQL queries.
 ##How does Laravel handle database migrations?
