@@ -22,22 +22,22 @@ Middleware acts as a bridge between a request and a response. It allows filterin
 
    Here's a more in-depth explanation along with a live example:
 
-## Understanding Middleware in Laravel:
+# Understanding Middleware in Laravel:
 
-+ # Middleware Flow:
++ ## Middleware Flow:
    * When a request enters your Laravel application, it passes through several layers before reaching the designated route or controller.
    * Middleware intercepts the request before it reaches the route or controller, allowing you to inspect, modify, or reject the request.
 
-+ # Types of Middleware:
-    + # Global Middleware:
++ ## Types of Middleware:
+    + ## Global Middleware:
         * Applied to all HTTP requests entering your application.
-    + # Route Middleware:
+    + ## Route Middleware:
         * Applied to specific routes or groups of routes.
   
-+ # Middleware Registration:
++ ## Middleware Registration:
    * Middleware can be registered within the **$middleware** property in the **app/Http/Kernel.php** file.
    * Global middleware is listed in the **$middleware array**, while route middleware is listed in the **$routeMiddleware array**.
-+ # Middleware Execution:
++ ## Middleware Execution:
 
   * Middleware execute sequentially in the order they are listed in the **$middleware** property.
   * Route-specific middleware can be assigned to routes or groups of routes within the route definitions.
@@ -45,12 +45,12 @@ Middleware acts as a bridge between a request and a response. It allows filterin
 ## Live Example:
 Let's create a custom middleware to demonstrate its usage. Suppose we want to create a middleware to ensure that only authenticated users can access certain routes.
 
-+ # Create Middleware:
++ ## Create Middleware:
 Run the following artisan command to generate a new middleware:
 
        php artisan make:middleware AuthenticateMiddleware
 
-+ # Modify Middleware:
++ ## Modify Middleware:
     Open the generated AuthenticateMiddleware class located in app/Http/Middleware. Add your authentication logic in the handle method. For example:
 
 
@@ -83,7 +83,7 @@ Add your middleware to the $routeMiddleware array in **app/Http/Kernel.php**:
           'auth' => \App\Http\Middleware\AuthenticateMiddleware::class,
       ];
 
-+ # Apply Middleware to Routes:
++ ## Apply Middleware to Routes:
    Use the middleware in your routes or route groups:
 
            Route::group(['middleware' => 'auth'], function () {
