@@ -1,12 +1,12 @@
 Here's a curated list of top 20 Laravel interview questions along with their answers:
 
-##What is Laravel?
+#What is Laravel?
 
 Laravel is a PHP framework used for building web applications following the Model-View-Controller (MVC) architectural pattern.
-##What are the features of Laravel?
+#What are the features of Laravel?
 
 Some key features of Laravel include routing, middleware, authentication, ORM (Eloquent), Blade templating engine, Artisan CLI, and more.
-##What is Composer, and how is it used in Laravel?
+#What is Composer, and how is it used in Laravel?
 
 Composer is a dependency manager for PHP. In Laravel, Composer is used to manage project dependencies and to install Laravel itself, as well as any third-party packages.
 ##Explain the concept of middleware in Laravel.
