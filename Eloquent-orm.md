@@ -142,6 +142,67 @@ Let's illustrate a one-to-many relationship between User and Post models.
 
 In this example, we've demonstrated a one-to-many relationship between User and Post models. A user can have multiple posts, and each post belongs to a single user.
 
+# morphOne or morphTo relationships 
+In Laravel's Eloquent ORM, morphOne and morphTo are used to establish polymorphic relationships between models. Polymorphic relationships allow a model (the "child" model) to belong to more than one other model (the "parent" models) on a single association. This is useful when you have scenarios where a model can belong to different types of entities.
+
+## morphTo Relationship:
+The morphTo relationship is used on the child model to indicate that it belongs to one of several possible parent models. It doesn't define the relationship itself, but rather serves as the inverse of the polymorphic relationship. It allows the child model to morph into any of the possible parent models based on the type and ID stored in the database.
+
+Example:
+Consider a Comment model that can belong to various types of content such as Post, Video, and Image.
+
+            class Comment extends Model
+            {
+                public function commentable()
+                {
+                    return $this->morphTo();
+                }
+            }
+## morphOne Relationship:
+The morphOne relationship is used on the parent model to define a one-to-one polymorphic relationship. It establishes a relationship where the parent model can have only one instance of the related model type.
+
+**Example**:
+Continuing with the previous example, if we want to associate one Profile with different types of users such as User, Admin, and Customer, we can define the relationship like this:
+
+            class Profile extends Model
+            {
+                public function profileable()
+                {
+                    return $this->morphTo();
+                }
+            }
+            
+            class User extends Model
+            {
+                public function profile()
+                {
+                    return $this->morphOne(Profile::class, 'profileable');
+                }
+            }
+            
+            class Admin extends Model
+            {
+                public function profile()
+                {
+                    return $this->morphOne(Profile::class, 'profileable');
+                }
+            }
+            
+            class Customer extends Model
+            {
+                public function profile()
+                {
+                    return $this->morphOne(Profile::class, 'profileable');
+                }
+            }
+            
+In this example, Profile model morphs into different types of parent models (User, Admin, Customer) based on the type and ID stored in the database.
+
+Summary:
+morphTo: Used on the child model to indicate it belongs to one of several possible parent models.
+morphOne: Used on the parent model to establish a one-to-one polymorphic relationship with a child model.
+These relationships provide flexibility when dealing with models that can belong to multiple other models. They simplify the management of complex data structures and make it easier to work with relational data in Laravel applications.
+
 ## Types of Polymorphic Relationships:
 
 **morphTo**, **morphMany**, or **morphToMany** relationships in Eloquent
