@@ -140,7 +140,86 @@ Let's illustrate a one-to-many relationship between User and Post models.
       $post = Post::find(1);
       $post->delete();
 
-In this example, we've demonstrated a one-to-many relationship between User and Post models. A **user** can have multiple **posts**, and each post belongs to a single user.
+In this example, we've demonstrated a one-to-many relationship between User and Post models. A user can have multiple posts, and each post belongs to a single user.
 
+## Types of Polymorphic Relationships:
 
-Define Models:
+**morphTo**, **morphMany**, or **morphToMany** relationships in Eloquent
+
+In Laravel's Eloquent ORM, polymorphic relationships provide a way to associate a model with multiple other models in a more flexible manner. Instead of defining separate foreign key columns for each related model, polymorphic relationships use a single database column to store the related model's type and ID. This is particularly useful when you have situations where a model can belong to multiple other models, and you want to establish those relationships dynamically.
+
+## 1 morphTo:
+
+* morphTo is used on the owning side of the polymorphic relationship.
+* It defines the inverse of the polymorphic relationship.
+* It indicates that the model can belong to any number of other models on a single association.
+## 2 morphMany:
+
+* morphMany is used on the related side of the polymorphic relationship.
+* It establishes a one-to-many polymorphic relationship, where the related model can have many of another model type.
+## 3 morphToMany:
+
+* morphToMany is used when you have a many-to-many relationship between two models, where one or both models can belong to multiple other models through a polymorphic relationship.
+* It establishes a many-to-many polymorphic relationship, allowing a model to belong to multiple instances of other models, and vice versa.
+
+ ## Example:
+Let's consider a scenario where we have a Comment model that can be associated with various types of content such as **Post**, **Video**, and **Image**. We'll demonstrate the usage of polymorphic relationships in this scenario.
+
+## 1 Define Models:
+
+                  // Comment model
+                  class Comment extends Model
+                  {
+                      public function commentable()
+                      {
+                          return $this->morphTo();
+                      }
+                  }
+
+                  // Post model
+                  class Post extends Model
+                  {
+                      public function comments()
+                      {
+                          return $this->morphMany(Comment::class, 'commentable');
+                      }
+                  }
+                  
+                  // Video model
+                  class Video extends Model
+                  {
+                      public function comments()
+                      {
+                          return $this->morphMany(Comment::class, 'commentable');
+                      }
+                  }
+                  
+                  // Image model
+                  class Image extends Model
+                  {
+                      public function comments()
+                      {
+                          return $this->morphMany(Comment::class, 'commentable');
+                      }
+                  }
+## 2 Create Comments:
+
+            $post = Post::find(1);
+            $post->comments()->create(['content' => 'Comment on post']);
+            
+            $video = Video::find(1);
+            $video->comments()->create(['content' => 'Comment on video']);
+            
+            $image = Image::find(1);
+            $image->comments()->create(['content' => 'Comment on image']);
+
+## 3 Retrieve Comments:
+
+            $post = Post::find(1);
+            $comments = $post->comments;
+            
+            foreach ($comments as $comment) {
+                echo $comment->content;
+            }
+
+In this example, we have established a polymorphic relationship between Comment and other models (Post, Video, Image). This allows comments to be associated with multiple types of content. The commentable method in the Comment model handles the polymorphic relation, and morphMany methods in Post, Video, and Image models establish the inverse relationships.
