@@ -1,24 +1,24 @@
-useReducer
+# useReducer
 
-  Provides an alternative to ‘useState’ for managing complex state logic involving multiple sub-values or when the next state depends on the previous one.
+  Provides an alternative to **‘useState’** for managing complex state logic involving multiple sub-values or when the next state depends on the previous one.
 
                                           or 
 
-useReducer Hook Explained:- 
+## useReducer Hook Explained:- 
                      The useReducer hook, introduced alongside other hooks in React 16.8, provides a mechanism for managing complex state logic within functional components. 
                      It's particularly useful when you have:
 
-                     1. Multiple State Values: If your component deals with several interconnected state values, 
+                     1. **Multiple State Values**: If your component deals with several interconnected state values, 
                         useReducer helps keep the state updates organized and predictable.
-                     2. Complex State Updates: When updating your component's state depends on the previous state,
+                     2. **Complex State Updates**: When updating your component's state depends on the previous state,
                         useReducer offers a clear way to define the state transition logic.
                      
-Breakdown of useReducer:
-    useReducer accepts two arguments (Reducer Function & Initial State) :
+## Breakdown of useReducer:
+    **useReducer** accepts two arguments (Reducer Function & Initial State) :
                 
                1.  Reducer Function: This function is the heart of useReducer. 
                     It takes two arguments: 
-                    the current state (state) and an action object (action). 
+                    the **current state (state)** and an **action object (action)**. 
                   Its responsibility is to return the new state based on the action type and payload (if present) within the action object.
                   Here's the basic structure:
                   
