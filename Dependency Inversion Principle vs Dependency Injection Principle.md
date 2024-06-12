@@ -5,7 +5,7 @@ I'd be glad to explain the Dependency Inversion Principle (DIP) and Dependency I
 ## Dependency Inversion Principle (DIP)
 
 **Concept**: DIP emphasizes that high-level modules (classes responsible for core application logic) should depend on abstractions (interfaces or abstract classes) rather than concrete implementations of their dependencies. This promotes loose coupling, making your code more flexible, maintainable, and testable.
-Benefits of DIP:
+### Benefits of DIP:
 
 **Easier to swap implementations**: By depending on abstractions, you can readily switch between different concrete implementations (e.g., different database drivers) without modifying the high-level code.
 Improved testability: You can create mock implementations of abstractions to isolate and test high-level modules in a controlled environment.
