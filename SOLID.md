@@ -37,7 +37,7 @@ It's like saying, if you have a program that uses a bird, you should be able to 
         makeBirdFly($bird2); // Error: breaks LSP
 
 
-#Dependency Inversion Principle :- 
+# Dependency Inversion Principle :- 
 
   DIP is focusing on decoupling high-level modules from low-level modules by introducing an abstraction layer.
 
@@ -73,25 +73,25 @@ It's like saying, if you have a program that uses a bird, you should be able to 
 Explain Dependency Injection
 Dependency Injection (DI) in PHP is like giving a class its 'tools' from outside rather than building them inside. It makes your code flexible (easy to change), clear (easy to understand), and test-friendly (easy to check if it's working).
 
-// without DI
-class Car {
-    private $engine;
-    
-    public function __construct() {
-        $this->engine = new Engine(); // The Car class is directly dependent on the Engine class.
-    }
-}
-
-// with DI
-
-class Car {
-    private $engine;
-    
-    public function __construct(Engine $engine) {
-        $this->engine = $engine; // The Engine dependency is injected into the Car class.
-    }
-}
-
-// Creating an Engine instance and injecting it into the Car class.
-$engine = new Engine();
-$car = new Car($engine);
+                // without DI
+                class Car {
+                    private $engine;
+                    
+                    public function __construct() {
+                        $this->engine = new Engine(); // The Car class is directly dependent on the Engine class.
+                    }
+                }
+                
+                // with DI
+                
+                class Car {
+                    private $engine;
+                    
+                    public function __construct(Engine $engine) {
+                        $this->engine = $engine; // The Engine dependency is injected into the Car class.
+                    }
+                }
+                
+                // Creating an Engine instance and injecting it into the Car class.
+                $engine = new Engine();
+                $car = new Car($engine);
