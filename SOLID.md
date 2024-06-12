@@ -16,25 +16,25 @@ It's like saying, if you have a program that uses a bird, you should be able to 
             }
         }
 
-class Sparrow extends Bird {
-    // Sparrow flies, so no need to override fly()
-}
+        class Sparrow extends Bird {
+            // Sparrow flies, so no need to override fly()
+        }
+        
+        class Penguin extends Bird {
+            public function fly() {
+                throw new Exception("I can't fly!");
+            }
+        }
+        
+        function makeBirdFly(Bird $bird) {
+            $bird->fly();
+        }
 
-class Penguin extends Bird {
-    public function fly() {
-        throw new Exception("I can't fly!");
-    }
-}
-
-function makeBirdFly(Bird $bird) {
-    $bird->fly();
-}
-
-$bird1 = new Sparrow();
-$bird2 = new Penguin();
-
-makeBirdFly($bird1); // Works fine
-makeBirdFly($bird2); // Error: breaks LSP
+        $bird1 = new Sparrow();
+        $bird2 = new Penguin();
+        
+        makeBirdFly($bird1); // Works fine
+        makeBirdFly($bird2); // Error: breaks LSP
 
 
 #Dependency Inversion Principle :- 
